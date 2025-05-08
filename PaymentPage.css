@@ -1,0 +1,243 @@
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --primary-light: #ebf0ff;
+  --success: #4cc9a0;
+  --text: #2b2d42;
+  --text-light: #8d99ae;
+  --border: #e9ecef;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+.payment-page {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.payment-page h2 {
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.payment-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.payment-card h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.amount-display {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text);
+  margin: 1.5rem 0;
+}
+
+.amount-display span {
+  color: var(--primary);
+}
+
+/* Payment Methods */
+.payment-methods {
+  margin: 2.5rem 0;
+}
+
+.method-option {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.method-option:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.method-option.selected {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.method-option.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 32px 32px 0;
+  border-color: transparent var(--primary) transparent transparent;
+}
+
+.method-option.selected::before {
+  content: '✓';
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  color: white;
+  font-size: 0.7rem;
+  z-index: 1;
+}
+
+.method-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 1.25rem;
+  border-radius: 8px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.method-option span {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.method-details {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.method-details label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.method-details input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: #f8f9fa;
+}
+
+.method-details input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.card-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-row .input-group {
+  flex: 1;
+}
+
+/* Pay Button */
+.pay-button {
+  display: block;
+  width: 100%;
+  padding: 1.1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1.5rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pay-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.25);
+}
+
+.pay-button:active {
+  transform: translateY(0);
+}
+
+.pay-button:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.pay-button .spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .payment-page {
+    padding: 1rem 0.5rem;
+  }
+  
+  .payment-card {
+    padding: 1.5rem;
+  }
+  
+  .card-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* Payment Icons - Add these to your public folder */
+/* UPI: https://example.com/upi-icon.svg */
+/* Credit Card: https://example.com/credit-card-icon.svg */
+/* Bank: https://example.com/bank-icon.svg */

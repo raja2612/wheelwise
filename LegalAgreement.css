@@ -1,0 +1,150 @@
+/* Clean Legal Agreement CSS without Numbered Lists */
+:root {
+  --primary-color: #1e3a8a;       /* dark blue */
+  --primary-light: #3b82f6;       /* lighter blue */
+  --primary-bg: #f0f6ff;          /* soft blue background */
+  --text-color: #1e293b;          /* slate dark text */
+  --secondary-text: #475569;      /* softer text color */
+  --highlight-bg: #e0e7ff;        /* highlight background */
+  --shadow: rgba(30, 58, 138, 0.2);
+}
+
+.legal-agreement-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--primary-bg);
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.agreement-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px var(--shadow);
+  max-width: 800px;
+  width: 100%;
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.agreement-card h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+}
+
+.agreement-content {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.agreement-content p {
+  margin-bottom: 1.5rem;
+  color: var(--secondary-text);
+}
+
+.agreement-content h3 {
+  color: var(--primary-color);
+  margin: 1.8rem 0 1rem;
+  font-size: 1.3rem;
+}
+
+/* Removed numbered list styling */
+.agreement-content ol,
+.agreement-content ul {
+  margin: 0 0 1.5rem 1.5rem;
+  padding-left: 1rem;
+}
+
+.agreement-content li {
+  margin-bottom: 0.8rem;
+}
+
+.important-note {
+  background-color: var(--highlight-bg);
+  padding: 1.2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+.important-note h4 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.agreement-checkbox {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem;
+  background-color: var(--highlight-bg);
+  border-radius: 10px;
+}
+
+.agreement-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-light);
+  flex-shrink: 0;
+}
+
+.agreement-checkbox label {
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.agree-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.agree-button:hover:enabled {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+.agree-button:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .agreement-card {
+    padding: 30px 20px;
+  }
+  
+  .agreement-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .agreement-content {
+    font-size: 0.9rem;
+  }
+}

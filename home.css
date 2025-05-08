@@ -1,0 +1,72 @@
+
+  
+  .owned-cars {
+    margin-top: 20px;
+  }
+  
+  .home-page {
+    padding: 2rem;
+  }
+  
+  .owned-cars h2 {
+    color: #2563eb;
+    margin-bottom: 1.5rem;
+  }
+  
+  .car-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .no-cars {
+    text-align: center;
+    margin-top: 50px;
+    color: #4b5563;
+  }
+  
+  .no-cars img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.85;
+  }
+  .no-cars-full {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px); /* Adjust for navbar height */
+    overflow: hidden;
+  }
+  
+  .no-cars-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    z-index: 1;
+  }
+  
+  .no-cars-message {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 10vh;
+    color: #1f2937; /* dark gray */
+  }
+  
+  .no-cars-message h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e3a8a; /* deep blue */
+  }
+  
+  .no-cars-message p {
+    font-size: 1.2rem;
+    color: #374151;
+  }
+  
